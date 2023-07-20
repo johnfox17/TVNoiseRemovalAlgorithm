@@ -12,14 +12,17 @@ class totalVariation:
 
     def solve(self, tf, initialCondition):
         numNodes = self.numNodes
+        coords = self.coords
         dt = self.dt
         numTimeSteps =int(tf/dt)
         time = []
         t = 0
-        for i in range(numTimeSteps+3):
-            print(t)
+        '''for i in range(numTimeSteps+3):
             time.append(t)
             t = t + dt
+        '''
+        np.savetxt('/home/doctajfox/Documents/Thesis_Research/TVNoiseRemovalAlgorithm/data/coords.csv', coords, delimiter=",")
+        #a = input('').split(" ")[0]
         #self.SOL_PDDO = 
         self.time = np.array(time)
         #print('Done')
