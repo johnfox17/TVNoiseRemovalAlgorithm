@@ -24,16 +24,6 @@ class totalVariation:
         numTimeSteps =int(tf/dt)
         time = []
         t = 0
-        numNodes = self.numNodes
-        coords = self.coords
-        print(self.dx)
-        print(self.dy) 
-        print(self.dt)
-        print(self.deltaX)
-        print(self.deltaY)
-        print(self.diffOrder)
-        print(self.bVec10)
-        print(self.bVec01)
         '''for i in range(numTimeSteps+3):
             time.append(t)
             t = t + dt
