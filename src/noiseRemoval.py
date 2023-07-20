@@ -10,11 +10,11 @@ import totalVariation as tv
 l1=1
 l2=1
 #N = 100
-dx = 0.001
-dy = 0.001
-dt = 0.001
-deltaX = 0.2015
-deltaY = 0.2015
+dx = 1/512
+dy = 1/512
+dt = 1/512
+deltaX = 0.008
+deltaY = 0.008
 
 t0 = 0
 tf = 5
@@ -50,8 +50,23 @@ def main():
     #a = input('').split(" ")[0]
     noisyImage = np.add(image,noise) 
     
+    ##############################
+    #PDDO Setup
+    ##############################
+    horizon = 3.015
+    delta = horizon * dx
+    bVec10 = np.array([0,1,0])
+    bVec01 = np.array([0,0,1])
+    diffOrder = 1
+    #numBC = 1
+    #boundaries = np.array([0.0, 1.0, 0.0, 1.0])
+    #BCY = np.array([dy/2,l2-dy/2])
+    #diffOrderBC = np.array([1])
+    #bVecBC = np.array([0,1,0])
+    #nodesBC = np.array([numNodes-1])
+
     #Denoise by using TV
-    TV = tv.totalVariation(numNodes, coords, dt)
+    TV = tv.totalVariation(numNodes, coords, dx, dy, dt, deltaX, deltaY, diffOrder, bVec10, bVec01)
     TV.solve(5, noisyImage)
     # display the array of pixels as an image
     fig, (ax1, ax2) = plt.subplots(1, 2, sharey=True)
