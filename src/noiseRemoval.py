@@ -41,7 +41,6 @@ def main():
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     # summarize shape of the pixel array
     rows, columns = image.shape
-    print(rows, columns) 
     #Create white gaussian noise 
     mean = 0
     std = 50 
