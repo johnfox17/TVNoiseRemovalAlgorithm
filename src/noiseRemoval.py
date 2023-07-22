@@ -34,7 +34,7 @@ def main():
         pathToLena = \
                 '/home/doctajfox/Documents/Thesis_Research/TVNoiseRemovalAlgorithm/data/Lena.png'
     else:
-        pathToLena = 'C:\\Users\\docta\\Documents\\Thesis\\TVNorm\\data\\Lena.png'
+        pathToLena = 'C:\\Users\\docta\\Documents\\Thesis\\TVNoiseRemovalAlgorithm\\data\\Lena.png'
 
     # load image as pixel array
     image = cv2.imread(pathToLena)
